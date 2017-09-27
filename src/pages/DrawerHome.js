@@ -6,6 +6,7 @@ import NavigationManager from '../NavigationManager'
 import Message from './Message'
 import Contact from './Contact'
 import Dynamic from './Dynamic'
+import PersonCenter from './PersonCenter'
 
 const Tab = TabNavigator(
   {
@@ -18,6 +19,9 @@ const Tab = TabNavigator(
     Dynamic: {
       screen: Dynamic,
     },
+    PersonCenter: {
+      screen: PersonCenter,
+    }
   }, {
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
