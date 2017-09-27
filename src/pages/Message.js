@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity, NativeModules, Alert } from "react-native"
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native"
 import NavigationManager from '../NavigationManager'
-
-import UShare from '../share/share'
-import SharePlatform from '../share/SharePlatform'
 
 export default class Message extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -40,35 +37,10 @@ export default class Message extends Component {
       />
     )
   })
-  _share() {
-    Alert.alert(NativeModules)
-    UShare.share('标题', '内容',
-      'http://baidu.com', 'http://dev.umeng.com/images/tab2_1.png', SharePlatform.QQ,
-      (message) => {
-        alert(message)
-        // message:
-        // 分享成功
-        // 分享失败
-        // 取消分享
-        // ToastAndroid.show(message,ToastAndroid.SHORT);
-
-      });
-  }
   render() {
     return (
       <View style={styles.container}>
-        <Text onPress={() => {
-          Alert.alert(NativeModules)
-          // NativeModules.sharemodule.share('标题', '内容', 'http://baidu.com', 'http://dev.umeng.com/images/tab2_1.png', 2,
-          //   (message) => {
-          //     // message:
-          //     // 分享成功
-          //     // 分享失败
-          //     // 取消分享
-          //     Alert.alert(message);
-
-          //   })
-        }}>聊天界面点击进入聊天</Text>
+        <Text>聊天界面点击进入聊天</Text>
       </View>
     )
   }
