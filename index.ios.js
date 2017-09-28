@@ -11,9 +11,14 @@ import {
   Text,
   View
 } from 'react-native'
+import SplashScreen from 'react-native-splash-screen'
 import HomePage from './src/pages/HomePage'
 
 export default class myReactNativeApp extends Component {
+  componentDidMount = () => {
+    SplashScreen.hide()
+  }
+
   render() {
     return (
       <HomePage />
