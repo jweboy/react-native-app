@@ -1,4 +1,10 @@
 {
   "name": "myReactNativeApp",
-  "displayName": "myReactNativeApp"
+  "displayName": "myReactNativeApp",
+  "expo": {
+    "name": "myReactNativeApp",
+    "slug": "myReactNativeApp",
+    "sdkVersion": "21.0.0",
+    "privacy": "public"
+  }
 }
