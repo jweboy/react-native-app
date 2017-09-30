@@ -61,7 +61,7 @@ export default class Contact extends Component {
     <SearchBar placeholder={'Type here ...'} round />
   )
   renderFooter = () => {
-    if (!this.state.loading) return null
+    // if (!this.state.loading) return null
 
     return (
       <View style={{
@@ -118,22 +118,23 @@ export default class Contact extends Component {
     const { data, refreshing } = this.state
     return (
       <View>
-        <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
-          <FlatList
-            data={data}
-            extraData={this.state}
-            renderItem={this.renderItem}
-            refreshing={refreshing}
-            keyExtractor={this.getKeyExtractor}
-            ItemSeparatorComponent={this.renderSeparator}
-            ListHeaderComponent={this.renderHeader}
-            ListFooterComponent={this.renderFooter}
-            // ListEmptyComponent={this.renderDefault}
-            onRefresh={this.handleRefresh}
-            onEndReached={this.handleLoadMore}
-            onEndReachedThreshold={100}
-          />
-        </List>
+        <FlatList
+          style={{ margin: 0 }}
+          data={data}
+          extraData={this.state}
+          renderItem={this.renderItem}
+          removeClippedSubviews={false}
+          refreshing={refreshing}
+          keyExtractor={this.getKeyExtractor}
+          ItemSeparatorComponent={this.renderSeparator}
+          ListHeaderComponent={this.renderHeader}
+          ListFooterComponent={this.renderFooter}
+          // ListEmptyComponent={this.renderDefault}
+          onRefresh={this.handleRefresh}
+          onEndReached={this.handleLoadMore}
+          onEndReachedThreshold={0}
+          initialNumToRender={5}
+        />
       </View>
     )
   }
