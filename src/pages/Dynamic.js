@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native'
+import navigationOptions from '../util/navigationOptions'
 
 const styles = StyleSheet.create({
   container: {
@@ -13,14 +14,7 @@ const styles = StyleSheet.create({
 export default class Dynamic extends Component {
   static navigationOptions = ({
     title: '动态',
-    headerTruncatedBackTitle: '返回',
-    headerStyle: {
-      backgroundColor: 'rgb(70,164,251)'
-    },
-    headerTitleStyle: {
-      color: 'white',
-      fontSize: 18,
-    },
+    ...navigationOptions,
     tabBarIcon: ({ tintColor }) => (
       <Image
         source={require('../../assets/images/star@3x.png')}

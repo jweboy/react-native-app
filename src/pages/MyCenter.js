@@ -1,28 +1,16 @@
 import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
 import imagePicker from 'react-native-image-picker'
+import navigationOptions from '../util/navigationOptions'
 // import PropTypes from 'prop-types'
 
 export default class PersonCenter extends Component {
-  // static propTypes = {
-  //   prop: PropTypes
-  // }
   state = {
     avatarSource: null
   }
   static navigationOptions = ({ navigation }) => ({
+    ...navigationOptions,
     title: '个人中心',
-    headerStyle: {
-      backgroundColor: 'rgb(70,164,251)'
-    },
-    headerTitleStyle: {
-      color: 'white',
-      fontSize: 18
-    },
-    gesturesEnabled: true,
-    headerBackTitleStyle: {
-      color: 'white'
-    },
     tabBarIcon: ({ tintColor }) => (
       <Image
         source={require('../../assets/images/contact@3x.png')}
@@ -75,7 +63,7 @@ export default class PersonCenter extends Component {
     return (
       <View>
         <Text onPress={this.show.bind(this)}>选取图片</Text>
-        <View style={styles.header}>
+        <View style={styles.header} onPress={this.show.bind(this)}>
           <Image
             source={avatarSource || require('../../assets/images/contact@3x.png')}
             style={styles.avatar}
@@ -89,6 +77,8 @@ export default class PersonCenter extends Component {
 
 const styles = StyleSheet.create({
   header: {
+    width: 100,
+    height: 100,
   },
   avatar: {
     width: 80,

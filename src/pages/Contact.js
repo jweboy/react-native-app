@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, Image, FlatList, ActivityIndicator } from 'react-native'
 import { List, ListItem, SearchBar } from 'react-native-elements'
+import navigationOptions from '../util/navigationOptions'
 
 export default class Contact extends Component {
   state = {
@@ -13,17 +14,7 @@ export default class Contact extends Component {
   }
   static navigationOptions = ({ navigation }) => ({
     title: '联系人',
-    headerStyle: {
-      backgroundColor: 'rgb(70,164,251)'
-    },
-    headerTitleStyle: {
-      color: 'white',
-      fontSize: 18
-    },
-    gesturesEnabled: true,
-    headerBackTitleStyle: {
-      color: 'white'
-    },
+    ...navigationOptions,
     tabBarIcon: ({ tintColor }) => (
       <Image
         source={require('../../assets/images/contact@3x.png')}

@@ -12,13 +12,12 @@ import {
   View
 } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
-import HomePage from './src/pages/HomePage'
+import HomePage from './src/pages'
 
-export default class myReactNativeApp extends Component {
+export default class MyReactNativeApp extends Component {
   componentDidMount = () => {
     SplashScreen.hide()
   }
-
   render() {
     return (
       <HomePage />
@@ -26,4 +25,4 @@ export default class myReactNativeApp extends Component {
   }
 }
 
-AppRegistry.registerComponent('myReactNativeApp', () => myReactNativeApp);
+AppRegistry.registerComponent('myReactNativeApp', () => MyReactNativeApp);

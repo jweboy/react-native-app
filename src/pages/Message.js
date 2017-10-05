@@ -1,21 +1,12 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native"
 import NavigationManager from '../NavigationManager'
+import navigationOptions from '../util/navigationOptions'
 
 export default class Message extends Component {
   static navigationOptions = ({ navigation }) => ({
+    ...navigationOptions,
     title: '消息',
-    headerStyle: {
-      backgroundColor: 'rgb(70,164,251)'
-    },
-    headerTitleStyle: {
-      color: 'white',
-      fontSize: 18
-    },
-    gesturesEnabled: true,
-    headerBackTitleStyle: {
-      color: 'white'
-    },
     headerLeft: (
       <TouchableOpacity onPress={() => NavigationManager.drawerNavigation.navigate('DrawerOpen')}>
         <View style={styles.main}>
