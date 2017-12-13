@@ -11,11 +11,9 @@ import {
   Text,
   View
 } from 'react-native'
-import Expo from 'expo'
+// import Expo from 'expo'
 import SplashScreen from 'react-native-splash-screen'
 import HomePage from './src/pages/HomePage'
-
-console.warn(Expo);
 
 export default class myReactNativeApp extends Component {
   componentDidMount = () => {
@@ -29,5 +27,5 @@ export default class myReactNativeApp extends Component {
   }
 }
 
-// AppRegistry.registerComponent('myReactNativeApp', () => myReactNativeApp);
-Expo.registerRootComponent(myReactNativeApp)
+AppRegistry.registerComponent('myReactNativeApp', () => myReactNativeApp);
+// Expo.registerRootComponent(myReactNativeApp)
