@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation'
-import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyleInterpolator'
+import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator'
 import NavigationManager from '../NavigationManager'
 import Message from '../pages/Message'
 import Contact from '../pages/Contact'
 import Dynamic from '../pages/Dynamic'
 import MyCenter from '../pages/MyCenter'
+import CreatePost from '../pages/CreatePost'
 
 const tabNavigatorScreen = {
   Message: {
@@ -47,6 +48,9 @@ const Tab = TabNavigator(tabNavigatorScreen, tabNavigatorConfig)
 const stackNavigatorScreen = {
   Tab: {
     screen: Tab,
+  },
+  CreatePost: {
+    screen: CreatePost,
   }
 }
 const stackNavigatorConfig = {
@@ -54,9 +58,10 @@ const stackNavigatorConfig = {
   headerMode: 'float',
   transitionConfig: (() => ({
     screenInterpolator: CardStackStyleInterpolator.forHorizontal,
-  }))
+  })),
+  initialRouteName: 'Tab',
 }
-const Nav = StackNavigator(stackNavigatorScreen, stackNavigatorConfig)
+const NavNavigator = StackNavigator(stackNavigatorScreen, stackNavigatorConfig)
 
 export default class DrawerHome extends Component {
   componentDidMount = () => {
@@ -65,7 +70,7 @@ export default class DrawerHome extends Component {
 
   render() {
     return (
-      <Nav />
+      <NavNavigator />
     )
   }
 }

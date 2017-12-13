@@ -1,14 +1,12 @@
 export default {
-  headerTruncatedBackTitle: '返回',
   headerStyle: {
-    backgroundColor: 'rgb(70,164,251)'
+    backgroundColor: 'rgb(70,164,251)',
   },
   headerTitleStyle: {
-    color: 'white',
     fontSize: 18,
   },
-  gesturesEnabled: true,
-  headerBackTitleStyle: {
-    color: 'white'
-  },
+  headerTintColor: '#fff',
+  gesturesEnabled: true, // 使用手势关闭屏幕
+  headerBackTitle: '返回',
+  headerTruncatedBackTitle: '返回', // headerBackTitle不适用的时候使用这个属性
 }

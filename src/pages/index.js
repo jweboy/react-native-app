@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, Dimensions, StyleSheet } from 'react-native'
 import { DrawerNavigator } from 'react-navigation'
-import SplashScreen from 'react-native-splash-screen'
 
 import DrawerLeft from '../common/DrawerLeft'
 import DrawerHome from '../common/DrawerHome'

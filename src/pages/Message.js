@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native"
+import ActionButton from 'react-native-action-button'
+// import Icon from 'react-native-vector-icons' //TODO 文件目录在iOS和android需要配置
+import { Icon } from 'react-native-elements'
 import NavigationManager from '../NavigationManager'
 import navigationOptions from '../util/navigationOptions'
+
+const ActionButtonItem = ActionButton.Item
 
 export default class Message extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -29,9 +34,34 @@ export default class Message extends Component {
     )
   })
   render() {
+    const { navigation } = this.props
     return (
       <View style={styles.container}>
         <Text>聊天界面点击进入聊天</Text>
+        <ActionButton buttonColor="rgba(231,76,60,1)">
+          <ActionButtonItem
+            buttonColor={'#00aced'}
+            title={'New Task'}
+            onPress={() => navigation.navigate('CreatePost')}
+          >
+            <Icon
+              name={'pencil'}
+              type={'font-awesome'}
+              iconStyle={styles.actionButtonIcon}
+            />
+          </ActionButtonItem>
+          <ActionButtonItem
+            buttonColor={'#1abc9c'}
+            title={'All Tasks'}
+            onPress={() => console.log("notes tapped!")}
+          >
+            <Icon
+              name={'check'}
+              type={'font-awesome'}
+              iconStyle={styles.actionButtonIcon}
+            />
+          </ActionButtonItem>
+        </ActionButton>
       </View>
     )
   }
@@ -57,5 +87,9 @@ const styles = StyleSheet.create({
   add: {
     width: 25,
     height: 25,
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    color: '#fff'
   }
 })
